@@ -1,0 +1,373 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="author" content="" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="autocomplete" content="off" />
+
+    <title>기후변화 상황지도</title>
+
+    <link rel="stylesheet" href="../resources/css/ui.base.css">
+
+    <style>
+        .guide-page-content {padding:2rem}
+        .guide-item-wrap {display:flex;align-items:center;flex-wrap:wrap;gap:.4rem;margin-bottom:1.6rem}
+        .guide-item-wrap.type-col {flex-direction:column;}
+        .guide-item-wrap.type-col .form-input-box,
+        .guide-item-wrap.type-col > div {width:100%}
+        .guide-item-wrap.gap-20 {gap:.8rem 2rem}
+        .guide-item {display:flex;flex-direction:column;gap:.4rem;font-size:1.2rem;color:#111;font-weight:500;align-items:center;}
+        .guide-item.dark {background-color:#111;color:#fff}
+        .guide-item span {text-align:center}
+        .guide-title {font-size:2.4rem;font-weight:800;margin-bottom:1.2rem}
+        .guide-sub-title {height:3.6rem;background-color:#F3F9FE;padding:0 1.6rem;display:flex;align-items:center;margin-bottom:.8rem;font-size:1.6rem;font-weight:500;border-radius:.4rem}
+        .guide-group ~ .guide-group {margin-top:3.6rem}
+        .form-fake-button-group {margin-bottom:1.6rem}
+        .mt-36 {margin-top:3.6rem}
+        .tooltip-pink-box,
+        .tooltip-blue-box,
+        .tooltip-gradation-box {position:relative !important;}
+        .form-input-tooltip-area .tooltip-pink-box {position:absolute !important;}
+    </style>
+</head>
+
+<body>
+<div class="base-wrap">
+    <header class="header" data-id="header"></header>
+    <main class="guide-page-content">
+        <div class="guide-group">
+            <p class="guide-title">BUTTON</p>
+            <p class="guide-sub-title">Button Style</p>
+            <div class="guide-item-wrap">
+                <button type="button" class="btn-base" data-color="primary" data-size="48">
+                    <span class="btn-text">Primary</span>
+                </button>
+                <button type="button" class="btn-base" data-color="secondary" data-size="48">
+                    <span class="btn-text">Secondary</span>
+                </button>
+                <button type="button" class="btn-base" data-color="tertiary" data-size="48">
+                    <span class="btn-text">Tertiary</span>
+                </button>
+                <button type="button" class="btn-base" data-color="ghost-light" data-size="48">
+                    <span class="btn-text">Ghost-light</span>
+                </button>
+                <button type="button" class="btn-base" data-color="ghost-dark" data-size="48">
+                    <span class="btn-text">Ghost-dark</span>
+                </button>
+                <button type="button" class="btn-base" data-color="ghost-dark" data-size="48" disabled>
+                    <span class="btn-text">disabled</span>
+                </button>
+            </div>
+            <p class="guide-sub-title">Button Size</p>
+            <div class="guide-item-wrap">
+                <button type="button" class="btn-base" data-color="primary" data-size="56">
+                    <span class="btn-text">Primary</span>
+                </button>
+                <button type="button" class="btn-base" data-color="primary" data-size="48">
+                    <span class="btn-text">Primary</span>
+                </button>
+                <button type="button" class="btn-base" data-color="primary" data-size="36">
+                    <span class="btn-text">Primary</span>
+                </button>
+                <button type="button" class="btn-base" data-color="primary" data-size="32">
+                    <span class="btn-text">Primary</span>
+                </button>
+            </div>
+        </div>
+        <div class="guide-group">
+            <p class="guide-title">FORM</p>
+            <p class="guide-sub-title">Checkbox</p>
+            <div class="guide-item-wrap gap-20">
+                <div class="form-element-checkbox" data-size="20" data-style="no-line">
+                    <input type="checkbox" id="checkbox0" name="checkbox" value="">
+                    <label for="checkbox0">
+                        no frame
+                    </label>
+                </div>
+                <div class="form-element-checkbox" data-size="20">
+                    <input type="checkbox" id="checkbox1" name="checkbox" value="" disabled>
+                    <label for="checkbox1">
+                        disabled
+                    </label>
+                </div>
+                <div class="form-element-checkbox" data-size="20">
+                    <input type="checkbox" id="checkbox1-4" name="checkbox" value="" disabled checked>
+                    <label for="checkbox1-4">
+                        checked disabled
+                    </label>
+                </div>
+                <div class="form-element-checkbox" data-size="20">
+                    <input type="checkbox" id="checkbox1-1" name="checkbox1" value="">
+                    <label for="checkbox1-1">
+                        checkbox 20
+                    </label>
+                </div>
+                <div class="form-element-checkbox" data-size="24">
+                    <input type="checkbox" id="checkbox1-2" name="checkbox1" value="">
+                    <label for="checkbox1-2">
+                        checkbox 24
+                    </label>
+                </div>
+                <div class="form-element-checkbox" data-size="24">
+                    <input type="checkbox" id="checkbox1-3" name="checkbox1" value="">
+                    <label for="checkbox1-3" class="sr-only">
+                        <span class="for-a11y">checkbox</span>
+                    </label>
+                </div>
+            </div>
+            <p class="guide-sub-title">Radio</p>
+            <div class="guide-item-wrap gap-20">
+                <div class="form-element-radio" data-size="20">
+                    <input type="radio" id="radio1" name="radio" value="" disabled>
+                    <label for="radio1">
+                        disabled
+                    </label>
+                </div>
+                <div class="form-element-radio" data-size="20">
+                    <input type="radio" id="radio1-4" name="radio" value="" disabled checked>
+                    <label for="radio1-4">
+                        disabled checked
+                    </label>
+                </div>
+                <div class="form-element-radio" data-size="20">
+                    <input type="radio" id="radio1-1" name="radio1" value="">
+                    <label for="radio1-1">
+                        radio 20
+                    </label>
+                </div>
+                <div class="form-element-radio" data-size="24">
+                    <input type="radio" id="radio1-2" name="radio1" value="">
+                    <label for="radio1-2">
+                        radio 24
+                    </label>
+                </div>
+                <div class="form-element-radio" data-size="24">
+                    <input type="radio" id="radio1-3" name="radio1" value="">
+                    <label for="radio1-3" class="sr-only">
+                        <span class="for-a11y">radio</span>
+                    </label>
+                </div>
+            </div>
+            <p class="guide-sub-title">Switch</p>
+            <div class="guide-item-wrap gap-20">
+                <div class="form-element-switch" data-size="28">
+                    <input type="checkbox" id="btn-switch" disabled />
+                    <label for="btn-switch">
+                        <span class="txt-uncheck">꺼짐</span>
+                        <span class="txt-checked">켜짐</span>
+                    </label>
+                </div>
+                <div class="form-element-switch" data-size="28">
+                    <input type="checkbox" id="btn-switch1" />
+                    <label for="btn-switch1">
+                        <span class="txt-uncheck">꺼짐</span>
+                        <span class="txt-checked">켜짐</span>
+                    </label>
+                </div>
+                <div class="form-element-switch" data-size="36">
+                    <input type="checkbox" id="btn-switch2" />
+                    <label for="btn-switch2">
+                        <span class="txt-uncheck">꺼짐</span>
+                        <span class="txt-checked">켜짐</span>
+                    </label>
+                </div>
+            </div>
+            <p class="guide-sub-title">Input</p>
+            <div class="guide-item-wrap type-col">
+                <div class="form-input-box" data-size="48" data-state="error">
+                    <div class="form-input-grid">
+                        <i class="icon-search"></i>
+                        <input type="search" class="form-element-input form-with-del" data-width="full" data-style="no-line" data-size="40" placeholder="플레이스홀더" />
+                        <button type="button" class="btn-in-del">
+                            <i class="icon-del-24"></i>
+                            <span class="for-a11y">삭제</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="form-input-box" data-size="56">
+                    <div class="form-input-grid">
+                        <i class="icon-search"></i>
+                        <input type="search" class="form-element-input form-with-del" data-width="full" data-style="no-line" data-size="40" placeholder="플레이스홀더" />
+                        <button type="button" class="btn-in-del">
+                            <i class="icon-del-24"></i>
+                            <span class="for-a11y">삭제</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="form-input-box" data-size="48">
+                    <div class="form-input-grid">
+                        <input type="text" class="form-element-input form-with-del" data-width="full" data-style="no-line" data-size="40" placeholder="이름 입력" />
+                        <button type="button" class="btn-in-del">
+                            <i class="icon-del-24"></i>
+                            <span class="for-a11y">삭제</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="form-input-box" data-size="56">
+                    <div class="form-input-grid">
+                        <input type="text" class="form-element-input form-with-del" data-width="full" data-style="no-line" data-size="40" placeholder="이름 입력" />
+                        <button type="button" class="btn-in-del">
+                            <i class="icon-del-24"></i>
+                            <span class="for-a11y">삭제</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <p class="guide-sub-title">Textarea</p>
+            <div class="guide-item-wrap type-col">
+                <div class="form-textarea-box">
+                    <textarea name="" id="textarea1" cols="30" rows="10" class="form-element-textarea" data-style="no-line"></textarea>
+                    <span class="textarea-data-vite">
+                        <span class="textarea-vite-value">0</span> / 200
+                    </span>
+                </div>
+            </div>
+            <p class="guide-sub-title">Dropdown</p>
+            <div class="guide-item-wrap type-col">
+                <div class="ui-select">
+                    <select title="Palette 앨범" id="uiSel1" data-callback="selectedCallback1" >
+                        <option value="1">이 지금</option>
+                        <option value="2">팔레트(Feat. G-DRAGON)</option>
+                        <option value="3" selected>이런 엔딩</option>
+                        <option value="4">사랑이 잘(with 오혁)</option>
+                        <option value="5">잼잼</option>
+                        <option value="6">Black Out</option>
+                        <option value="7">마침표</option>
+                        <option value="8">밤편지(Through the Night)</option>
+                        <option value="9">그렇게 사랑은</option>
+                        <option value="10">이름에게</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="guide-group">
+            <p class="guide-title">FOLDING</p>
+        </div>
+        <div class="guide-group">
+            <p class="guide-title">TAB</p>
+        </div>
+        <div class="guide-group">
+            <p class="guide-title">ICON</p>
+            <p class="guide-sub-title">LNB Icon</p>
+            <div class="guide-item-wrap gap-20">
+                <div class="guide-item">
+                    <i class="icon-aspect-lnb1" data-size="24"></i>
+                    <span>icon-aspect-lnb1</span>
+                </div>
+                <div class="guide-item">
+                    <i class="icon-aspect-lnb1" data-size="24"></i>
+                    <span>icon-aspect-lnb2</span>
+                </div>
+                <div class="guide-item">
+                    <i class="icon-aspect-lnb3" data-size="24"></i>
+                    <span>icon-aspect-lnb3</span>
+                </div>
+                <div class="guide-item">
+                    <i class="icon-aspect-lnb4" data-size="24"></i>
+                    <span>icon-aspect-lnb4</span>
+                </div>
+                <div class="guide-item">
+                    <i class="icon-aspect-lnb5" data-size="24"></i>
+                    <span>icon-aspect-lnb5</span>
+                </div>
+                <div class="guide-item">
+                    <i class="icon-aspect-lnb6" data-size="24"></i>
+                    <span>icon-aspect-lnb6</span>
+                </div>
+            </div>
+            <p class="guide-sub-title">Content Icon</p>
+            <div class="guide-item-wrap gap-20">
+                <div class="guide-item">
+                    <i class="icon-aspect-map1" data-size="24"></i>
+                    <span>icon-aspect-map1</span>
+                </div>
+                <div class="guide-item">
+                    <i class="icon-aspect-map2" data-size="24"></i>
+                    <span>icon-aspect-map2</span>
+                </div>
+                <div class="guide-item">
+                    <i class="icon-aspect-map3" data-size="24"></i>
+                    <span>icon-aspect-map3</span>
+                </div>
+                <div class="guide-item">
+                    <i class="icon-aspect-map4" data-size="24"></i>
+                    <span>icon-aspect-map4</span>
+                </div>
+                <div class="guide-item">
+                    <i class="icon-aspect-map5" data-size="24"></i>
+                    <span>icon-aspect-map5</span>
+                </div>
+                <div class="guide-item">
+                    <i class="icon-aspect-minus" data-size="24"></i>
+                    <span>icon-aspect-minus</span>
+                </div>
+                <div class="guide-item">
+                    <i class="icon-aspect-plus" data-size="24"></i>
+                    <span>icon-aspect-plus</span>
+                </div>
+                <div class="guide-item">
+                    <i class="icon-aspect-refresh" data-size="24"></i>
+                    <span>icon-aspect-refresh</span>
+                </div>
+                <div class="guide-item">
+                    <i class="icon-aspect-sunny-snowing" data-size="24"></i>
+                    <span>icon-aspect-sunny-snowing</span>
+                </div>
+                <div class="guide-item">
+                    <i class="icon-aspect-avg" data-size="24"></i>
+                    <span>icon-aspect-avg</span>
+                </div>
+                <div class="guide-item">
+                    <i class="icon-aspect-bloodtype" data-size="24"></i>
+                    <span>icon-aspect-bloodtype</span>
+                </div>
+                <div class="guide-item">
+                    <i class="icon-aspect-dew-point" data-size="24"></i>
+                    <span>icon-aspect-dew-point</span>
+                </div>
+                <div class="guide-item">
+                    <i class="icon-aspect-down" data-size="24"></i>
+                    <span>icon-aspect-down</span>
+                </div>
+                <div class="guide-item">
+                    <i class="icon-aspect-home" data-size="24"></i>
+                    <span>icon-aspect-home</span>
+                </div>
+                <div class="guide-item">
+                    <i class="icon-aspect-close" data-size="24"></i>
+                    <span>icon-aspect-close</span>
+                </div>
+
+                <div class="guide-item dark">
+                    <i class="icon-aspect-home-w" data-size="24"></i>
+                    <span>icon-aspect-home-w</span>
+                </div>
+                <div class="guide-item dark">
+                    <i class="icon-aspect-select-arrow-w" data-size="24"></i>
+                    <span>icon-aspect-select-arrow-w</span>
+                </div>
+                <div class="guide-item dark">
+                    <i class="icon-aspect-breadcrumbs-arrow-w" data-size="24"></i>
+                    <span>icon-aspect-breadcrumbs-arrow-w</span>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="footer" data-id="footer"></footer>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+    });
+    
+</script>
+</body>
+</html>

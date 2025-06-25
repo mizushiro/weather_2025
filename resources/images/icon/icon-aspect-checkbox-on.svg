@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14">
+  <g id="check_box" transform="translate(-948 -747)">
+    <g id="sel" transform="translate(948 747)" fill="#fff" stroke="#000" stroke-width="1">
+      <rect width="14" height="14" stroke="none"/>
+      <rect x="0.5" y="0.5" width="13" height="13" fill="none"/>
+    </g>
+    <path id="che" d="M286.465,133.595l3.5,5,3.5-5" transform="translate(665.035 618.17)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+  </g>
+</svg>
