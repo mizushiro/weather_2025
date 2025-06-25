@@ -89,6 +89,8 @@ a[data-decoration="false"] {text-decoration:none}
 .icon-aspect-checkbox-off {background-image:url("../images/icon/icon-aspect-checkbox-off.svg")}
 .icon-aspect-checkbox-on {background-image:url("../images/icon/icon-aspect-checkbox-on.svg")}
 .icon-aspect-close {background-image:url("../images/icon/icon-aspect-close.svg")}
+.icon-aspect-close2 {background-image:url("../images/icon/icon-aspect-close2.svg")}
+.icon-aspect-close2-w {background-image:url("../images/icon/icon-aspect-close2-w.svg")}
 .icon-aspect-csv {background-image:url("../images/icon/icon-aspect-csv.svg")}
 .icon-aspect-dew-point {background-image:url("../images/icon/icon-aspect-dew-point.svg")}
 .icon-aspect-down {background-image:url("../images/icon/icon-aspect-down.svg")}
@@ -124,6 +126,20 @@ a[data-decoration="false"] {text-decoration:none}
 .icon-aspect-refresh-on {background-image:url("../images/icon/icon-aspect-refresh-on.svg")}
 .icon-aspect-select-arrow-w {background-image:url("../images/icon/icon-aspect-select-arrow-w.svg")}
 .icon-aspect-sunny-snowing {background-image:url("../images/icon/icon-aspect-sunny-snowing.svg")}
+.icon-aspect-circle-down {background-image:url("../images/icon/icon-aspect-circle-down.svg")}
+.icon-aspect-contrast {background-image:url("../images/icon/icon-aspect-contrast.svg")}
+.icon-aspect-settings {background-image:url("../images/icon/icon-aspect-settings.svg")}
+.icon-aspect-stacks {background-image:url("../images/icon/icon-aspect-stacks.svg")}
+.icon-aspect-split-scene {background-image:url("../images/icon/icon-aspect-split-scene.svg")}
+.icon-aspect-expand-circle {background-image:url("../images/icon/icon-aspect-expand-circle.svg")}
+.icon-aspect-search {background-image:url("../images/icon/icon-aspect-search.svg")}
+.icon-aspect-search-b {background-image:url("../images/icon/icon-aspect-search-b.svg")}
+.icon-aspect-reset {background-image:url("../images/icon/icon-aspect-reset.svg")}
+.icon-aspect-filter-w {background-image:url("../images/icon/icon-aspect-filter-w.svg")}
+.icon-aspect-menu {background-image:url("../images/icon/icon-aspect-menu.svg")}
+.icon-aspect-play {background-image:url("../images/icon/icon-aspect-play.svg")}
+.icon-aspect-stop {background-image:url("../images/icon/icon-aspect-stop.svg")}
+
 
 /* 말줄임 */
 [data-ellipsis] {text-overflow:ellipsis;overflow:hidden;}
