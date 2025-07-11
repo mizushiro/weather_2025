@@ -83,7 +83,6 @@ a[data-decoration="false"] {text-decoration:none}
 [class*="icon-aspect-"][data-opacity="0.8"] {opacity:.8}
 
 .icon-aspect-avg {background-image:url("../images/icon/icon-aspect-avg.svg")}
-.icon-aspect-bloodtype {background-image:url("../images/icon/icon-aspect-bloodtype.svg")}
 .icon-aspect-breadcrumbs-arrow {background-image:url("../images/icon/icon-aspect-breadcrumbs-arrow.svg")}
 .icon-aspect-breadcrumbs-arrow-w {background-image:url("../images/icon/icon-aspect-breadcrumbs-arrow-w.svg")}
 .icon-aspect-checkbox-off {background-image:url("../images/icon/icon-aspect-checkbox-off.svg")}
@@ -92,7 +91,6 @@ a[data-decoration="false"] {text-decoration:none}
 .icon-aspect-close2 {background-image:url("../images/icon/icon-aspect-close2.svg")}
 .icon-aspect-close2-w {background-image:url("../images/icon/icon-aspect-close2-w.svg")}
 .icon-aspect-csv {background-image:url("../images/icon/icon-aspect-csv.svg")}
-.icon-aspect-dew-point {background-image:url("../images/icon/icon-aspect-dew-point.svg")}
 .icon-aspect-down {background-image:url("../images/icon/icon-aspect-down.svg")}
 .icon-aspect-home {background-image:url("../images/icon/icon-aspect-home.svg")}
 .icon-aspect-home-w {background-image:url("../images/icon/icon-aspect-home-w.svg")}
@@ -125,7 +123,6 @@ a[data-decoration="false"] {text-decoration:none}
 .icon-aspect-refresh {background-image:url("../images/icon/icon-aspect-refresh.svg")}
 .icon-aspect-refresh-on {background-image:url("../images/icon/icon-aspect-refresh-on.svg")}
 .icon-aspect-select-arrow-w {background-image:url("../images/icon/icon-aspect-select-arrow-w.svg")}
-.icon-aspect-sunny-snowing {background-image:url("../images/icon/icon-aspect-sunny-snowing.svg")}
 .icon-aspect-circle-down {background-image:url("../images/icon/icon-aspect-circle-down.svg")}
 .icon-aspect-contrast {background-image:url("../images/icon/icon-aspect-contrast.svg")}
 .icon-aspect-settings {background-image:url("../images/icon/icon-aspect-settings.svg")}
@@ -139,6 +136,29 @@ a[data-decoration="false"] {text-decoration:none}
 .icon-aspect-menu {background-image:url("../images/icon/icon-aspect-menu.svg")}
 .icon-aspect-play {background-image:url("../images/icon/icon-aspect-play.svg")}
 .icon-aspect-stop {background-image:url("../images/icon/icon-aspect-stop.svg")}
+.icon-aspect-division {background-image:url("../images/icon/icon-aspect-division.svg")}
+.icon-aspect-division2 {background-image:url("../images/icon/icon-aspect-division2.svg")}
+.icon-aspect-link {background-image:url("../images/icon/icon-aspect-link.svg")}
+.icon-aspect-unlink {background-image:url("../images/icon/icon-aspect-unlink.svg")}
+.icon-aspect-range {background-image:url("../images/icon/icon-aspect-range.svg")}
+.icon-aspect-swap-vert-w {background-image:url("../images/icon/icon-aspect-swap-vert-w.svg")}
+.icon-aspect-screen-right {background-image:url("../images/icon/icon-aspect-screen-right.svg")}
+.icon-aspect-screen-left {background-image:url("../images/icon/icon-aspect-screen-left.svg")}
+.icon-aspect-query-stats-w {background-image:url("../images/icon/icon-aspect-query-stats-w.svg")}
+
+.icon-aspect-bloodtype {background-image:url("../images/icon/icon-aspect-bloodtype.svg")}
+.icon-aspect-bloodtype2 {background-image:url("../images/icon/icon-aspect-bloodtype2.svg")}
+.icon-aspect-sunny-snowing {background-image:url("../images/icon/icon-aspect-sunny-snowing.svg")}
+.icon-aspect-dew-point {background-image:url("../images/icon/icon-aspect-dew-point.svg")}
+.icon-aspect-average-temperature {background-image:url("../images/icon/icon-aspect-average-temperature.svg")}
+.icon-aspect-minimum-temperature {background-image:url("../images/icon/icon-aspect-minimum-temperature.svg")}
+.icon-aspect-high-temperature {background-image:url("../images/icon/icon-aspect-high-temperature.svg")}
+.icon-aspect-humidity {background-image:url("../images/icon/icon-aspect-humidity.svg")}
+.icon-aspect-rainfall {background-image:url("../images/icon/icon-aspect-rainfall.svg")}
+.icon-aspect-air {background-image:url("../images/icon/icon-aspect-air.svg")}
+.icon-aspect-scenario {background-image:url("../images/icon/icon-aspect-scenario.svg")}
+.icon-aspect-past {background-image:url("../images/icon/icon-aspect-past.svg")}
+.icon-aspect-past2 {background-image:url("../images/icon/icon-aspect-past2.svg")}
 
 
 /* 말줄임 */
