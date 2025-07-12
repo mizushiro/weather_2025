@@ -2,14 +2,16 @@ import Dialog from './component/dialog.js';
 import Drag from './component/drag.js';
 import Dropdown from './component/dropdown.js';
 import Tab from './component/tab.js';
+import ButtonSelection from './component/buttonSelection.js';
 
-import { loadContent } from './utils/loadContent.js';
+import { loadContent } from './utils/utils.js';
 
 export const PrimoUX = {
 	Dialog,
 	Drag,
 	Tab,
 	Dropdown,
+	ButtonSelection,
 	
 	init: () => {
 		const global = 'UI';

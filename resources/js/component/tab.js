@@ -1,4 +1,4 @@
-import { loadContent } from '../utils/loadContent.js';
+import { loadContent } from '../utils/utils.js';
 
 export default class Tab {
   constructor(opt) {
@@ -30,6 +30,7 @@ export default class Tab {
     });
     this.el_tab.innerHTML = tablist_html;
     this.el_wrap.innerHTML = tabpanel_html;
+    this.el_tabBtns = this.el_tab.querySelectorAll('[role="tab"]');
 
     this.data.forEach((item, index) => {
       const n = index + 1;
@@ -43,12 +44,31 @@ export default class Tab {
         (item.callback && item.selected) && item.callback();
       })
       .catch(err => console.error('Error loading tab content:', err));
-
     });
-    
-    this.el_tabBtns = this.el_tab.querySelectorAll('[role="tab"]')
+
+    const tabArray = Array.from(this.el_tabBtns);
+    this.el_tabBtns = this.el_tab.querySelectorAll('[role="tab"]');
     this.el_tabBtns.forEach((item, index) => {
+      const keyHandler = (e) => {
+        const key = e.key;
+        let dir = 0;
+
+        if (key === 'ArrowRight' || key === 'ArrowDown') dir = 1;
+        else if (key === 'ArrowLeft' || key === 'ArrowUp') dir = -1;
+        else return;
+
+        e.preventDefault();
+
+        const currentIndex = tabArray.indexOf(item);
+        const nextIndex = (currentIndex + dir + this.el_tabBtns.length) % this.el_tabBtns.length;
+        const nextItem = this.el_tabBtns[nextIndex];
+
+        console.log(nextItem);
+        this.expanded(nextItem.id);
+      };
+      
       item.addEventListener('click', this.handleToggle.bind(this));
+      item.addEventListener('keydown', keyHandler);
     });
   }
 
@@ -74,13 +94,21 @@ export default class Tab {
     const panelSelected = panelWrap.querySelector(`[role="tabpanel"][aria-expanded="true"]`);
     const currentPanel = panelWrap.querySelector(`[role="tabpanel"][aria-labelledby="${tabID}"]`);
 
+    _this.focus();
+
+    const _tabs = _wrap.querySelectorAll('[role="tab"]');
+		_tabs.forEach(item => {
+			item.setAttribute('tabindex', '-1');
+		});
+
     // tab button
     tabSelected.setAttribute('aria-selected', false);
     _this.setAttribute('aria-selected', true);
+    _this.setAttribute('tabindex', '0');
     // tab panel
     panelSelected.setAttribute('aria-expanded', false);
     panelSelected.setAttribute('tabindex', '-1');
     currentPanel.setAttribute('aria-expanded', true);
-    currentPanel.setAttribute('tabindex', 0);
+    currentPanel.setAttribute('tabindex', '0');
   }
 }

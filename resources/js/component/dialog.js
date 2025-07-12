@@ -1,4 +1,4 @@
-import { loadContent } from '../utils/loadContent.js';
+import { loadContent } from '../utils/utils.js';
 
 export default class Dialog {
   //private

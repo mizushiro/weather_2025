@@ -20,8 +20,8 @@ article, aside, details, figcaption, figure, footer, header, main, hgroup, nav, 
 .ui-widget {font-family:'NanumSquare', 'Malgun Gothic', AppleGothicNeoSD, 'Apple SD 산돌고딕 Neo', 'Microsoft NeoGothic', 'Droid sans', Dotum, 돋움, 굴림, arial, sans-serif;}
 textarea {resize:none}
 a, button {color:blue}
-button:focus-visible,
-a:focus-visible {outline:none}
+/* button:focus-visible,
+a:focus-visible {outline:none} */
 * {box-sizing:border-box}
 .ui-widget input, .ui-widget select, .ui-widget textarea, .ui-widget button {font-family:'NanumSquare', 'Malgun Gothic', AppleGothicNeoSD, 'Apple SD 산돌고딕 Neo', 'Microsoft NeoGothic', 'Droid sans', Dotum, 돋움, 굴림, arial, sans-serif;font-size:1.4rem;}
 

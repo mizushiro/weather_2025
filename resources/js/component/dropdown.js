@@ -1,6 +1,7 @@
 export default class Dropdown {
   constructor(opt) {
     this.id = opt.id;
+    this.callback = opt.callback;
     this.wrap = document.querySelector(`[data-dropdown="${this.id}"]`);
     this.button = this.wrap.querySelector(`[data-dropdown-button]`);
     this.text = this.button.querySelector(`[data-dropdown-text]`);
@@ -12,6 +13,7 @@ export default class Dropdown {
 
   init() {
     //setting
+    this.text.dataset.dropdownText = this.id;
     this.button.dataset.dropdownButton = this.id;
     this.button.setAttribute('aria-controls', this.id);
     this.button.setAttribute('aria-expanded', false);
@@ -21,22 +23,8 @@ export default class Dropdown {
     this.panel.id = this.id;
 
     this.button.addEventListener('click', this.handleToggle);
-    if (this.radioButtons) {
-      this.radioButtons.forEach(item => {
-        item.addEventListener('click', this.handleSelect);
-      });
-    }
-  }
 
-  handleSelect = (e) => {
-    const _this = e.currentTarget;
-    const dataText = _this.textContent;
-    const selected = this.panel.querySelector('[role="radio"][aria-checked="true"]');
-
-    selected.setAttribute('aria-checked', false);
-    _this.setAttribute('aria-checked', true);
-    this.text.textContent = dataText;
-    this.hide();
+    this.callback && this.callback();
   }
 
   handleToggle = (e) => {

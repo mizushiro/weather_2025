@@ -35,6 +35,8 @@
   <main class="guide-page-content">
     <div class="guide-group">
       <p class="guide-title">Component</p>
+
+      <!-- Dialog -->
       <p class="guide-sub-title">Dialog Component</p>
       <div class="guide-item-wrap">
         <button type="button" data-test-id="modal1" onclick="UI.exe.modal1.show()">center</button>|
@@ -45,10 +47,37 @@
         <button type="button" data-test-id="alert1" onclick="UI.exe.alert1.show()">alert</button>
       </div>
 
+      <!-- Tab -->
       <p class="guide-sub-title">Tab Component</p>
       <div class="guide-item-wrap">
+
         <div role="tablist" data-tab="tab1"></div>
         <div data-tab-wrap="tab1"></div>
+
+      </div>
+
+      <!-- Dropdown -->
+      <p class="guide-sub-title">Dropdown Component</p>
+      <div class="guide-item-wrap">
+
+        <div data-dropdown="dropdown1">
+          <button type="button" data-dropdown-button>
+            <span data-dropdown-text>서울시</span>
+          </button>
+          <div data-dropdown-panel aria-hidden="true">
+            <div data-selection="rd1"></div>
+          </div>
+        </div>
+
+        <div data-dropdown="dropdown2">
+          <button type="button" data-dropdown-button>
+            <span data-dropdown-text>월요일</span>
+          </button>
+          <div data-dropdown-panel aria-hidden="true">
+            <div data-selection="rd2"></div>
+          </div>
+        </div>
+
       </div>
     </div>
 
@@ -91,6 +120,56 @@
   import { PrimoUX } from '../resources/js/ui.global.js';
   PrimoUX.init();
 
+  console.log(PrimoUX.utils)
+
+  // dropdown
+  UI.exe.dropdown1 = new PrimoUX.Dropdown({
+    id: 'dropdown1',
+    callback: () => {
+      //내부 라디오버튼 선택인 경우
+      UI.exe.rd1 = new PrimoUX.ButtonSelection({
+        id: 'rd1',
+        type: 'radio',
+        label: '지역선택',
+        data: [
+          {text:'서울시', value:'서울시', checked: true},
+          {text:'강남구', value:'강남구', checked: false},
+          {text:'강동구', value:'강동구', checked: false},
+          {text:'강북구', value:'강북구', checked: false},
+        ],
+        callback: (target, value) => {
+          document.querySelector(`[data-dropdown-text="${UI.exe.dropdown1.id}"]`).textContent = value;
+          UI.exe.dropdown1.hide();
+        }
+      });
+    }
+  });
+  UI.exe.dropdown2 = new PrimoUX.Dropdown({
+    id: 'dropdown2',
+    callback: () => {
+      //내부 라디오버튼 선택인 경우
+      UI.exe.rd2 = new PrimoUX.ButtonSelection({
+        id: 'rd2',
+        type: 'checkbox',
+        label: '요일선택',
+        data: [
+          {text:'월요일', value:'월요일', checked: true},
+          {text:'화요일', value:'화요일', checked: false},
+          {text:'수요일', value:'수요일', checked: false},
+          {text:'목요일', value:'목요일', checked: false},
+          {text:'금요일', value:'금요일', checked: false},
+          {text:'토요일', value:'토요일', checked: false},
+          {text:'일요일', value:'일요일', checked: false},
+        ],
+        callback: (target, value) => {
+          document.querySelector(`[data-dropdown-text="${UI.exe.dropdown2.id}"]`).textContent = value;
+          // UI.exe.dropdown2.hide();
+        }
+      });
+      
+    }
+  });
+
 
   // tab
   UI.exe.tab1 = new PrimoUX.Tab({
@@ -102,10 +181,11 @@
       {tab: `<span>tab 2</span>`, src: './tab/tab2.html', selected:false, callback:() => {
         console.log('tab2')
       }},
+      {tab: `<span>tab 3</span>`, src: './tab/tab3.html', selected:false, callback:() => {
+        console.log('tab3')
+      }},
     ],
   });
-
-
 
 
   // dialog
