@@ -1,0 +1,38 @@
+<!-- 
+ data-type="modal" : 
+	모달 다이얼로그 
+	- 배경과의 상호작용 불가
+	- 중요한 결정, 경고, 입력 필수 상황
+	- dim(dimmed background) 필수
+ data-type="non-modal" : 
+	논모달 다이얼로그 
+	- 일반적인 정보 표시나 간단한 입력 등
+	- dim 선택
+-->
+<div class="ui-dialog" role="dialog" aria-hidden="true" 
+data-dialog="modalname1" 
+aria-labelledby="modalname1-label"
+aria-describedby="modalname1-decs"> 
+	<!-- 
+	role="document" : 다이얼로그 내에 가상모드로 탐색 콘텐츠가 존재하는 부분을 알립니다.
+	필수요소
+	data-dialog-item="wrap" : 기본 전체 감싸는 영역
+	data-dialog-item="main" : 내용이 들어가는 영역
+	 -->
+	<div class="ui-dialog--wrap" role="document" tabindex="-1" data-dialog-item="wrap">
+		<div class="ui-dialog--header">
+			<h1 id="modalname1-label">제목</h1>
+			<p id="modalname1-decs">간략한 소개 및 기능에 대한 설명</p>
+			<button type="button" aria-label="창닫기" data-dialog-button="close">닫기</button>
+		</div>
+		<div class="ui-dialog--main" data-dialog-item="main">
+			.........<br>
+			.........<br>
+			.........
+		</div>
+		<div class="ui-dialog--footer">
+			<button type="button" data-dialog-button="close">취소</button>
+			<button type="button">확인</button>
+		</div>
+	</div>
+</div>

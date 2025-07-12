@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Component | Guide </title>
+	<link rel="stylesheet" href="../resources/css/ui.base.css">
+
+  <style>
+    .guide-page-content {padding:2rem}
+    .guide-item-wrap {display:flex;align-items:center;flex-wrap:wrap;gap:.4rem;margin-bottom:1.6rem}
+    .guide-item-wrap.type-col {flex-direction:column;}
+    .guide-item-wrap.type-col .form-input-box,
+    .guide-item-wrap.type-col > div {width:100%}
+    .guide-item-wrap.gap-20 {gap:.8rem 2rem}
+    .guide-item {display:flex;flex-direction:column;gap:.4rem;font-size:1.2rem;color:#111;font-weight:500;align-items:center;}
+    .guide-item.dark {background-color:#111;color:#fff}
+    .guide-item span {text-align:center}
+    .guide-title {font-size:2.4rem;font-weight:800;margin-bottom:1.2rem}
+    .guide-sub-title {height:3.6rem;background-color:#F3F9FE;padding:0 1.6rem;display:flex;align-items:center;margin-bottom:.8rem;font-size:1.6rem;font-weight:500;border-radius:.4rem}
+    .guide-group ~ .guide-group {margin-top:3.6rem}
+    .form-fake-button-group {margin-bottom:1.6rem}
+    .mt-36 {margin-top:3.6rem}
+    .tooltip-pink-box,
+    .tooltip-blue-box,
+    .tooltip-gradation-box {position:relative !important;}
+    .form-input-tooltip-area .tooltip-pink-box {position:absolute !important;}
+  </style>
+</head>
+
+<body>
+<div class="base-wrap">
+  <header class="header" data-id="header"></header>
+  <main class="guide-page-content">
+    <div class="guide-group">
+      <p class="guide-title">Component</p>
+      <p class="guide-sub-title">Dialog Component</p>
+      <div class="guide-item-wrap">
+        <button type="button" data-test-id="modal1" onclick="UI.exe.modal1.show()">center</button>|
+        <button type="button" data-test-id="modal2" onclick="UI.exe.modal2.show()">bottom</button>|
+        <button type="button" data-test-id="modal3" onclick="UI.exe.modal3.show()">top</button>|
+        <button type="button" data-test-id="modal4" onclick="UI.exe.modal4.show()">left</button>|
+        <button type="button" data-test-id="modal5" onclick="UI.exe.modal5.show()">right</button>|
+        <button type="button" data-test-id="alert1" onclick="UI.exe.alert1.show()">alert</button>
+      </div>
+
+      <p class="guide-sub-title">Tab Component</p>
+      <div class="guide-item-wrap">
+        <div role="tablist" data-tab="tab1"></div>
+        <div data-tab-wrap="tab1"></div>
+      </div>
+    </div>
+
+    <!-- dialog 영역 : main -->
+    <div class="area-dialog" data-area="main"></div>
+  </main>
+  <footer class="footer" data-id="footer"></footer>
+</div>
+
+<!-- dialog 영역 : body -->
+<div class="area-dialog" data-area="body">
+  <div class="ui-dialog" role="dialog" aria-hidden="true" 
+  data-dialog="modalname2" 
+  aria-labelledby="modalname2-label"
+  aria-describedby="modalname2-decs"> 
+    <div class="ui-dialog--wrap" role="document" tabindex="-1" data-dialog-item="wrap">
+      <div class="ui-dialog--header">
+        <h1 id="modalname2-label">제목2</h1>
+        <p id="modalname2-decs">간략한 소개 및 기능에 대한 설명</p>
+        <button type="button" aria-label="창닫기" data-dialog-button="close">닫기</button>
+      </div>
+      <div class="ui-dialog--main" data-dialog-item="main">
+        .........<br>
+        .........<br>
+        .........
+      </div>
+      <div class="ui-dialog--footer">
+        <button type="button" data-dialog-button="close">취소</button>
+        <button type="button">확인</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="area-system"></div>
+<div class="area-select"></div>
+<div class="area-toast"></div>
+
+<!-- script -->
+<script type="module">
+  import { PrimoUX } from '../resources/js/ui.global.js';
+  PrimoUX.init();
+
+
+  // tab
+  UI.exe.tab1 = new PrimoUX.Tab({
+    id: 'tab1',
+    data: [
+      {tab: `<span>tab 1</span>`, src: './tab/tab1.html', selected:true, callback:() => {
+        console.log('tab1 관련 스크립트')
+      }},
+      {tab: `<span>tab 2</span>`, src: './tab/tab2.html', selected:false, callback:() => {
+        console.log('tab2')
+      }},
+    ],
+  });
+
+
+
+
+  // dialog
+  UI.exe.modal1 = new PrimoUX.Dialog({
+    area: document.querySelector('.area-dialog[data-area="body"]'),
+    id: 'modalname1',
+    ps: 'center',
+    src: './dialog/modal.html',
+    extend: false,
+    loadCallback: () => {
+      console.log('modal1 loadCallback')
+    },
+  });			
+
+  UI.exe.modal2 = new PrimoUX.Dialog({
+    id: 'modalname2',
+    ps: 'bottom',
+    src: null,
+    extend: true, 
+    loadCallback: () => {
+      console.log('modal2 loadCallback')
+    },
+  });
+
+  UI.exe.modal3 = new PrimoUX.Dialog({
+    area: document.querySelector('.area-dialog[data-area="main"]'),
+    id: 'modalname3',
+    ps: 'top',
+    src: './dialog/modal3.html',
+    extend: false,
+    loadCallback: () => {
+      console.log('modal3 loadCallback')
+    },
+  });
+
+  UI.exe.modal4 = new PrimoUX.Dialog({
+    area: document.querySelector('.area-dialog[data-area="body"]'),
+    id: 'modalname4',
+    ps: 'left',
+    src: './dialog/modal4.html',
+    extend: false,
+    loadCallback: () => {
+      console.log('modal4 loadCallback')
+    },
+  });
+
+  UI.exe.modal5 = new PrimoUX.Dialog({
+    area: document.querySelector('.area-dialog[data-area="body"]'),
+    id: 'modalname5',
+    ps: 'right',
+    src: './dialog/modal5.html',
+    extend: false,
+    loadCallback: () => {
+      console.log('modal5 loadCallback')
+    },
+  });
+
+  UI.exe.alert1 = new PrimoUX.Dialog({
+    area: document.querySelector('.area-dialog[data-area="body"]'),
+    id: 'alert1',
+    type: 'system',
+    title: `<b>제목</b>영역입니다.`,
+    message: `<strong>공지</strong>입니다.`,
+    confirmText: '확인',
+    confirmCallback: () => {
+      console.log('확인 콜백');
+    },
+    cancelText: '취소',
+    cancelCallback: ()=> {
+      console.log('취소 콜백');
+      UI.exe.alert1.hide()
+    },
+  });
+
+</script>
+</body>
+
+</html>
